@@ -1,0 +1,49 @@
+# AppSettings is ignored for now as it contains the API Key
+appsettings.json
+
+# .NET Core build artifacts
+bin/
+obj/
+
+# .NET Core user-specific files
+*.db
+*.log
+*.pdb
+*.user
+*.vspscc
+*.vssscc
+
+# NuGet packages
+packages/
+*.nupkg
+*.snupkg
+.nuget/
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Visual Studio specific files
+.vscode/
+.vs/
+*.csproj.user
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# build output directories
+publish/
+publish-output/
+
+# .NET Core secrets
+secrets.json
+
+# temporary files and folders
+tmp/
+temp/
+*.tmp
+*.temp
+
+# OS generated files
+.DS_Store
+Thumbs.db

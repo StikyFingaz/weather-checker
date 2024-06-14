@@ -1,0 +1,209 @@
+// 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
+@import "bootstrap/scss/functions";
+
+// 2. Include any default variable overrides here
+// Enable negative margins globally
+$enable-negative-margins: true;
+
+// Change border-radius globally insntead of per-element
+// $border-radius: 0;
+
+// Other overrides
+// $dropdown-border-radius: 0;
+// $dropdown-min-width: min-content;
+$dropdown-link-active-bg: rgba(33, 37, 41, 1);
+$focus-ring-color: rgba(33, 37, 41, 0.5);
+$focus-ring-width: 0.2rem;
+// $focus-ring-blur: 4px;
+$input-focus-border-color: rgba($focus-ring-color, 0.7);
+// $modal-content-border-radius: 0;
+$form-check-input-checked-bg-color: rgba(216, 31, 37, 1);
+
+// 3. Include remainder of required Bootstrap stylesheets
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/variables-dark";
+
+// 4. Include any default map overrides here
+$theme-colors: (
+  "primary": rgba(216, 31, 37, 1),
+  "secondary": $secondary,
+  "success": $success,
+  "info": $info,
+  "warning": rgba(219, 150, 2, 1),
+  "danger": $danger,
+  "light": $light,
+  "dark": rgba(33, 31, 32, 1),
+);
+
+// 5. Include remainder of required parts
+@import "../node_modules/bootstrap/scss/maps";
+@import "../node_modules/bootstrap/scss/mixins";
+@import "../node_modules/bootstrap/scss/root";
+
+// 6. Optionally include any other parts as needed
+@import "bootstrap/scss/reboot";
+@import "bootstrap/scss/utilities";
+@import "bootstrap/scss/type";
+@import "bootstrap/scss/images";
+@import "bootstrap/scss/containers";
+@import "bootstrap/scss/grid";
+// @import "bootstrap/scss/tables";
+// @import "bootstrap/scss/forms";
+@import "bootstrap/scss/buttons";
+@import "bootstrap/scss/transitions";
+// @import "bootstrap/scss/dropdown";
+// @import "bootstrap/scss/button-group";
+// @import "bootstrap/scss/nav";
+// @import "bootstrap/scss/navbar";
+@import "bootstrap/scss/card";
+// @import "bootstrap/scss/breadcrumb";
+// @import "bootstrap/scss/accordion";
+// @import "bootstrap/scss/pagination";
+// @import "bootstrap/scss/badge";
+// @import "bootstrap/scss/alert";
+// @import "bootstrap/scss/progress";
+// @import "bootstrap/scss/list-group";
+@import "bootstrap/scss/close";
+// @import "bootstrap/scss/toasts";
+// @import "bootstrap/scss/modal";
+// @import "bootstrap/scss/tooltip";
+// @import "bootstrap/scss/popover";
+// @import "bootstrap/scss/carousel";
+// @import "bootstrap/scss/spinners";
+// @import "bootstrap/scss/offcanvas";
+@import "bootstrap/scss/placeholders";
+@import "bootstrap/scss/helpers";
+
+// 7. Optionally include utilities API last to generate classes based on the Sass map in `_utilities.scss`
+@import "bootstrap/scss/utilities/api";
+
+// 8. Custom styles
+// Custom backgrounds
+.bg-custom {
+  --bs-bg-opacity: 0.8;
+  background-color: rgba(4, 0, 0, var(--bs-bg-opacity)) !important;
+}
+
+.bg-darker {
+  --bs-bg-opacity: 0.6;
+  background-color: rgba(26, 25, 30, var(--bs-bg-opacity)) !important;
+}
+
+.bg-gray-blurred {
+  --bs-bg-opacity: 0.15;
+  background-color: rgba(255, 255, 255, var(--bs-bg-opacity)) !important;
+  backdrop-filter: blur(15px);
+}
+
+// Custom gradient border
+.gradient-border {
+  position: relative;
+  --border-radius: 30px;
+}
+
+.gradient-border::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: var(--border-radius);
+  border: 1px solid transparent;
+  background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.7), transparent, transparent) border-box;
+  mask:
+    linear-gradient(#fff 0 0) padding-box,
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  z-index: -9999;
+}
+
+// Custom blockquote
+blockquote {
+  // position: relative;
+  // padding-left: 1em;
+  margin-bottom: -20px !important;
+  // border-left: 0.2em solid lighten($black, 90%);
+  // font-family: 'Roboto', serif;
+  // font-size: large;
+  // line-height: $base-line-height;
+  font-weight: 300;
+  &:before,
+  &:after {
+    content: "\201C";
+    // font-family: 'Sanchez';
+    font-size: xxx-large;
+    color: lighten($black, 60%);
+  }
+  &:after {
+    content: "\201D";
+  }
+}
+
+// Fix the space before and after blockquote text
+.quote-text {
+  margin-top: -20px;
+  margin-bottom: 5px;
+}
+
+.line-clamp-small {
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+}
+
+// Custom hr
+hr {
+  border: 0;
+  height: 2px;
+  background: #333;
+  background-image: -webkit-linear-gradient(left, #ccc, #333, #ccc);
+  background-image: -moz-linear-gradient(left, #ccc, #333, #ccc);
+  background-image: -ms-linear-gradient(left, #ccc, #333, #ccc);
+  background-image: -o-linear-gradient(left, #ccc, #333, #ccc);
+}
+
+// Button styles
+.btn {
+  text-transform: uppercase;
+}
+
+// Navbar styles
+.nav-link {
+  text-transform: uppercase;
+}
+
+.nav-dropdown {
+  text-transform: uppercase;
+}
+
+.navbar-toggler:focus {
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+.navbar-toggler {
+  border: 0 !important;
+}
+
+// Swiper JS styles
+.gallery-slide:active,
+.gallery-slide:focus {
+  cursor: grabbing;
+  cursor: -moz-grabbing;
+  cursor: -webkit-grabbing;
+}
+
+.swiper:hover,
+.swiper:focus {
+  cursor: pointer;
+  cursor: -moz-pointer;
+  cursor: -webkit-pointer;
+}
+
+.swiper:active,
+.swiper:focus {
+  cursor: grabbing;
+  cursor: -moz-grabbing;
+  cursor: -webkit-grabbing;
+}

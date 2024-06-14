@@ -1,0 +1,27 @@
+{
+  "name": "weather-app",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev --host 0.0.0.0 --port 3001 & npm run prettier-watch",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "prettier-watch": "onchange \"**/*\" -- prettier --write --ignore-unknown {{changed}}"
+  },
+  "devDependencies": {
+    "@nuxt/devtools": "latest",
+    "@types/bootstrap": "^5.2.10",
+    "nuxt": "^3.11.2",
+    "nuxt-icon": "^0.6.7",
+    "onchange": "^7.1.0",
+    "prettier": "^3.2.5",
+    "sass": "^1.69.5",
+    "vue": "^3.3.12",
+    "vue-router": "^4.2.5"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.2"
+  }
+}
